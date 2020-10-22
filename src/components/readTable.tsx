@@ -1,48 +1,35 @@
 import path from "path";
 import xlsx, { WorkBook } from "xlsx";
-import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { GetStaticProps } from "next";
 
 export type DataTable = {
   namesTeams: string[][];
   betVariants: number[][];
   scoresPriorities: number[][];
   matchesScores: number[];
-};
+}
 
-let fileName: string="combinate.xlsx";
+/** @param filename Имя excel файла, который нужно прочитать*/
+export const fileName: string = "/static/combinate.xlsx";
+export const matchesCount = 15;
+export const variantsCount = 36;
 
-/**Возвращает структурированные данные из таблицы
- * @param filename Имя excel файла, который нужно прочитать
- */
-const ReadTable = ({
-  dataTable,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
-  return (
-    <div>
-      <p>{dataTable.matchesScores}</p>
-      <p>{dataTable.scoresPriorities}</p>
-      <p>{dataTable.namesTeams}</p>
-      <p>{dataTable.betVariants}</p>
-    </div>
-  );
-};
-
-
+/**Возвращает структурированные данные из таблицы*/
 export const getStaticProps: GetStaticProps = async () => {
-  console.log("hello getStaticProps");
+
   let workbook = xlsx.readFile(path.join(process.cwd(), fileName)); //чтение из файла
   let worksheet = workbook.Sheets[workbook.SheetNames[0]]; //берем первый лист
   let data = xlsx.utils.sheet_to_json(worksheet, { header: 1 }); //преобразовываем в массив
- 
+
   let dataTable: DataTable = {
     betVariants: [],
     matchesScores: [],
     namesTeams: [],
-    scoresPriorities: [],
+    scoresPriorities: []
   };
 
   /**Преобразование данных из файла*/
-  for (let row = 1; row <= 15; row++) {
+  for (let row = 1; row <= matchesCount; row++) {
     //формирование массива, в котором содержаться названия команд
     dataTable.namesTeams.push([]);
     dataTable.namesTeams[row - 1].push(data[row][1]);
@@ -56,7 +43,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
     //формирование массива вариантов ставок
     dataTable.betVariants.push([]);
-    for (let col = 10; col <= 46; col++) {
+    for (let col = 9; col <= variantsCount + 8; col++) {
       dataTable.betVariants[row - 1].push(data[row][col]);
     }
 
@@ -70,5 +57,3 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   };
 };
-
-export default ReadTable;

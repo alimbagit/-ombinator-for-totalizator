@@ -1,9 +1,21 @@
-import ExcelTable from "../components/excelTable";
+import { InferGetStaticPropsType } from "next";
+import { getStaticProps } from 'components/readTable';
+import TableViewer from 'components/table/tableViewer';
+import { WrapperApp } from 'components/elementsIndexPage';
+import TextLineToto from 'components/textLineToto';
 
-const App = () => (
-  <div>
-    <ExcelTable />
-  </div>
-);
+
+const App = ({
+  dataTable,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
+  return (
+    <WrapperApp>
+      <TableViewer {...dataTable} />
+      <TextLineToto/>
+    </WrapperApp>
+  );
+};
 
 export default App;
+
+export { getStaticProps } from 'components/readTable';
