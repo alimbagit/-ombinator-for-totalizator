@@ -1,0 +1,4 @@
+export const CHANGE_NAME_TEAM="CHANGE_NAME_TEAM" as const;
+export const CHANGE_PRIORITY="CHANGE_PRIORITY" as const;
+export const CHANGE_MATCHES_SCORES="CHANGE_MATCHES_SCORES" as const;
+export const SET_INITIAL_VALUES="SET_INITIAL_VALUES" as const;
