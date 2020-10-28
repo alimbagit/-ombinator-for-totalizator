@@ -25,6 +25,7 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "styled-components": "5.2.0",
+    "with-styled-components": "1.0.0",
     "xlsx": "0.16.7",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",

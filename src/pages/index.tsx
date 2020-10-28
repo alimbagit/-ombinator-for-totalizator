@@ -18,7 +18,7 @@ const App = ({
     <ReduxProvider store={store}>
       <WrapperApp>
         <TableViewer {...dataTable} />
-        {/* <TextTotoViewer /> */}
+        <TextTotoViewer />
       </WrapperApp>
     </ReduxProvider>
   );
