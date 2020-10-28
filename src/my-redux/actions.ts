@@ -21,14 +21,14 @@ export function changeNameTeam(indexMatch: number, indexTeam: number, value: str
 }
 
 /**Редактирование приоритетов прогнозов */
-export function changePriority(indexMatch: number, indexPriority: number, value: number) {
+export function changePriority(indexMatch: number, indexPriority: number, value: string) {
   return {
     type: CHANGE_PRIORITY,
     payload: { indexMatch, indexPriority, value }
   };
 }
 /**Редактирование исходов матчей*/
-export function changeMatchesScores(indexMatch: number, score: number) {
+export function changeMatchesScores(indexMatch: number, score: string) {
   return {
     type: CHANGE_MATCHES_SCORES,
     payload: { indexMatch, score }

@@ -1,7 +1,7 @@
 import path from "path";
 import xlsx, { WorkBook } from "xlsx";
 import { GetStaticProps } from "next";
-import { State } from 'my-redux/rootReducer';
+import { State } from "my-redux/rootReducer";
 
 /** Имя excel файла, который нужно прочитать*/
 export const fileName: string = "/static/combinate.xlsx";
@@ -12,7 +12,6 @@ export const variantsCount = 36;
 
 /**Возвращает структурированные данные из таблицы*/
 export const getStaticProps: GetStaticProps = async () => {
-
   let workbook = xlsx.readFile(path.join(process.cwd(), fileName)); //чтение из файла
   let worksheet = workbook.Sheets[workbook.SheetNames[0]]; //берем первый лист
   let data = xlsx.utils.sheet_to_json(worksheet, { header: 1 }); //преобразовываем в массив
@@ -21,7 +20,7 @@ export const getStaticProps: GetStaticProps = async () => {
     betVariants: [],
     matchesScores: [],
     namesTeams: [],
-    scoresPriorities: []
+    scoresPriorities: [],
   };
 
   /**Преобразование данных из файла*/
@@ -34,7 +33,9 @@ export const getStaticProps: GetStaticProps = async () => {
     // формиорование массива приоритетов ставок
     dataTable.scoresPriorities.push([]);
     for (let col = 4; col <= 6; col++) {
-      dataTable.scoresPriorities[row - 1].push(data[row][col]);
+      data[row][col] == "0"
+        ? dataTable.scoresPriorities[row - 1].push("X")
+        : dataTable.scoresPriorities[row - 1].push(data[row][col]);
     }
 
     //формирование массива вариантов ставок
@@ -44,7 +45,9 @@ export const getStaticProps: GetStaticProps = async () => {
     }
 
     //формирование массива результатов матчей
-    dataTable.matchesScores.push(data[row][8]);
+    data[row][8] == "0"
+      ? dataTable.matchesScores.push("X")
+      : dataTable.matchesScores.push(data[row][8]);
   }
 
   return {

@@ -38,7 +38,7 @@ const ExcelTable = ({ ...data }: State) => {
 
   useEffect(() => {
     dispatch(setInitialValues(data));
-    setResultHits(calculateBetVariants(data.matchesScores, data.betVariants));
+    setResultHits(calculateBetVariants(data.matchesScores, data.scoresPriorities, data.betVariants));
   }, []);
 
   const firstUpdate = useRef(true); //Переменная для пропуска первой загрузки
@@ -49,7 +49,7 @@ const ExcelTable = ({ ...data }: State) => {
       return;
     }
 
-    setResultHits(calculateBetVariants(matchesScores, betVariants));
+    setResultHits(calculateBetVariants(matchesScores, scoresPriorities, betVariants));
   }, [matchesScores, betVariants]);
 
   /**Обработчик изменения имен команд */
@@ -68,9 +68,9 @@ const ExcelTable = ({ ...data }: State) => {
     indexPriority: number
   ) => {
     dispatch(
-      changePriority(indexMatch, indexPriority, parseInt(event.target.value))
+      changePriority(indexMatch, indexPriority, event.target.value)
     );
-    const calculate = calculateBetVariants(matchesScores, betVariants);
+    const calculate = calculateBetVariants(matchesScores, scoresPriorities, betVariants);
     setResultHits(calculate);
   };
 
@@ -79,8 +79,8 @@ const ExcelTable = ({ ...data }: State) => {
     event: React.ChangeEvent<HTMLInputElement>,
     indexMatch: number
   ) => {
-    dispatch(changeMatchesScores(indexMatch, parseInt(event.target.value)));
-    setResultHits(calculateBetVariants(matchesScores, betVariants));
+    dispatch(changeMatchesScores(indexMatch, event.target.value));
+    setResultHits(calculateBetVariants(matchesScores, scoresPriorities, betVariants));
   };
 
   return (

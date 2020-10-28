@@ -25,7 +25,7 @@ export const SelectNumber = ({
         } else handleChange(e, indexMatch);
       }}
     >
-      <MenuItem value="0">0</MenuItem>
+      <MenuItem value="X">X</MenuItem>
       <MenuItem value="1">1</MenuItem>
       <MenuItem value="2">2</MenuItem>
     </Select>
