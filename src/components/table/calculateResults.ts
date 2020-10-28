@@ -1,8 +1,8 @@
 import { variantsCount, matchesCount } from "components/readTable";
 /**Вычисление совпавших вариантов */
 export const calculateBetVariants = (
-  matchesScores: number[],
-  betVariants: number[][]
+  matchesScores: string[],
+  betVariants: string[][]
 ) => {
   let result: number[] = new Array(variantsCount);
   result.fill(0);

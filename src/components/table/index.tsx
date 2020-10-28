@@ -50,7 +50,7 @@ const ExcelTable = ({ ...data }: State) => {
     }
 
     setResultHits(calculateBetVariants(matchesScores, betVariants));
-  },[matchesScores,betVariants]);
+  }, [matchesScores, betVariants]);
 
   /**Обработчик изменения имен команд */
   const handleChangeNameTeam = (
@@ -70,7 +70,7 @@ const ExcelTable = ({ ...data }: State) => {
     dispatch(
       changePriority(indexMatch, indexPriority, parseInt(event.target.value))
     );
-    const calculate=calculateBetVariants(matchesScores, betVariants)
+    const calculate = calculateBetVariants(matchesScores, betVariants);
     setResultHits(calculate);
   };
 

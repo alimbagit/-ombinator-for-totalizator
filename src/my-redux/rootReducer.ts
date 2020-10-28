@@ -8,9 +8,9 @@ import {
 
 export type State = {
   namesTeams: string[][];
-  betVariants: number[][];
-  scoresPriorities: number[][];
-  matchesScores: number[];
+  betVariants: string[][];
+  scoresPriorities: string[][];
+  matchesScores: string[];
 };
 
 /** */
@@ -26,7 +26,6 @@ export const rootReducer = (
   action: Actions
 ): State => {
   const new_state = JSON.parse(JSON.stringify(state));
-  // const new_state = { ...state };
   switch (action.type) {
     case SET_INITIAL_VALUES:
       new_state.betVariants = action.payload.initialState.betVariants;
@@ -42,7 +41,6 @@ export const rootReducer = (
       return new_state;
     /**Редактирование приоритетов */
     case CHANGE_PRIORITY:
-      console.log(typeof action.payload.value);
       new_state.scoresPriorities[action.payload.indexMatch][
         action.payload.indexPriority
       ] = action.payload.value;
