@@ -21,11 +21,11 @@
   "homepage": "https://github.com/alimbagit/combinator-for-totalizator#readme",
   "dependencies": {
     "@material-ui/core": "4.11.0",
+    "@material-ui/icons": "4.9.1",
     "next": "^9.5.5",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "styled-components": "5.2.0",
-    "with-styled-components": "1.0.0",
     "xlsx": "0.16.7",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
