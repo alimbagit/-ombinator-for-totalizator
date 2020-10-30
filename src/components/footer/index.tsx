@@ -31,7 +31,7 @@ const Footer = () => {
           ";" +
           (row + 1).toString() +
           "-(" +
-          scoresPriorities[row][betVariants[row][col]] +
+          scoresPriorities[row][parseInt(betVariants[row][col])] +
           ")";
       }
       text += ".\n";

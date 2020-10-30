@@ -1,15 +1,25 @@
 import { Select, MenuItem } from "@material-ui/core";
+import React from "react";
 
 interface SelectNumberProps {
-  valueCell: number;
+  valueCell: string;
   handleChange: (
-    event: React.ChangeEvent<HTMLInputElement>,
+    value: string,
     indexMatch: number,
     indexValue?: number
   ) => void;
+
   indexMatch: number;
   indexValue?: number;
 }
+
+/**
+ * @param handleChange - калбэк функция, которая будет вызвана при изменении состояний в таблице
+ * @param valueCell - текущее значение ячейки
+ * @param indecMatch - индекс матча в таблице
+ * @param indexValue - index изменяемого значния
+ * @param value - значение, присваиваемое после события onChange
+*/
 export const SelectNumber = ({
   valueCell,
   handleChange,
@@ -19,10 +29,10 @@ export const SelectNumber = ({
   return (
     <Select
       value={valueCell}
-      onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+      onChange={(e) => {
         if (indexValue !== undefined) {
-          handleChange(e, indexMatch, indexValue);
-        } else handleChange(e, indexMatch);
+          handleChange(e.target.value as string, indexMatch, indexValue);
+        } else handleChange(e.target.value as string, indexMatch);
       }}
     >
       <MenuItem value="X">X</MenuItem>

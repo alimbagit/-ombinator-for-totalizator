@@ -7,12 +7,10 @@ import {
   Table,
   TableContainer,
   TextField,
-  TextFieldProps,
 } from "@material-ui/core";
 import { State } from "my-redux/rootReducer";
-import React, { useEffect, useState, useLayoutEffect, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { tableHeaderData } from "./data";
-// import { TableWrapper } from './elements';
 import { useDispatch, useSelector } from "react-redux";
 import {
   setInitialValues,
@@ -23,9 +21,11 @@ import {
 import { variantsCount } from "components/readTable";
 import { calculateBetVariants } from "./calculateResults";
 import { SelectNumber } from "./elements";
+import loadDeafaultTable from "components/readTable";
+
 
 /**Главный компонент таблицы */
-const ExcelTable = ({ ...data }: State) => {
+const ExcelTable = () => {
   const dispatch = useDispatch();
 
   const matchesScores = useSelector((state: State) => state.matchesScores);
@@ -34,10 +34,13 @@ const ExcelTable = ({ ...data }: State) => {
   );
   const namesTeams = useSelector((state: State) => state.namesTeams);
   const betVariants = useSelector((state: State) => state.betVariants);
-  const [resultHits, setResultHits] = useState([]);
+  const [resultHits, setResultHits] = useState<number[]>([]);
 
   useEffect(() => {
+    const data = loadDeafaultTable();
+
     dispatch(setInitialValues(data));
+    console.log("data= ", data);
     setResultHits(calculateBetVariants(data.matchesScores, data.scoresPriorities, data.betVariants));
   }, []);
 
@@ -48,7 +51,7 @@ const ExcelTable = ({ ...data }: State) => {
       firstUpdate.current = false;
       return;
     }
-
+    console.log("useEffect2");
     setResultHits(calculateBetVariants(matchesScores, scoresPriorities, betVariants));
   }, [matchesScores, betVariants]);
 
@@ -61,26 +64,28 @@ const ExcelTable = ({ ...data }: State) => {
     dispatch(changeNameTeam(indexMatch, indexTeam, event.target.value));
   };
 
-  /**Обработчик для изменения приоритетов */
-  const handleChangePriority = (
-    event: React.ChangeEvent<HTMLInputElement>,
+  /**Калбэк функция для передачи в компонент SelectNumber для изменения приоритетов и результатов матчей 
+   * @param value - значение, которое будет возвращать SelectNumber
+   * @param indexMatch - номер матча
+   * @param indexValue - индекс изменяемого значения
+  */
+  const handleChange = (
+    value: string,
     indexMatch: number,
-    indexPriority: number
+    indexValue?: number
   ) => {
-    dispatch(
-      changePriority(indexMatch, indexPriority, event.target.value)
-    );
+    if (indexValue !== undefined) {
+      dispatch(
+        changePriority(indexMatch, indexValue, value)
+      );
+    }
+    else {
+      dispatch(
+        changeMatchesScores(indexMatch, value)
+      );
+    }
     const calculate = calculateBetVariants(matchesScores, scoresPriorities, betVariants);
     setResultHits(calculate);
-  };
-
-  /**Обработчик изменения результатов матчей */
-  const handleChangeScores = (
-    event: React.ChangeEvent<HTMLInputElement>,
-    indexMatch: number
-  ) => {
-    dispatch(changeMatchesScores(indexMatch, event.target.value));
-    setResultHits(calculateBetVariants(matchesScores, scoresPriorities, betVariants));
   };
 
   return (
@@ -125,7 +130,7 @@ const ExcelTable = ({ ...data }: State) => {
                   <TableCell key={key}>
                     <SelectNumber
                       valueCell={priority}
-                      handleChange={handleChangePriority}
+                      handleChange={handleChange}
                       indexMatch={index}
                       indexValue={key}
                     />
@@ -135,14 +140,14 @@ const ExcelTable = ({ ...data }: State) => {
                 <TableCell>
                   <SelectNumber
                     valueCell={matchesScores[index]}
-                    handleChange={handleChangeScores}
+                    handleChange={handleChange}
                     indexMatch={index}
                   />
                 </TableCell>
                 {/* Варианты ставок */}
                 {betVariants[index].map((variant, key) => (
                   <TableCell key={key}>
-                    {scoresPriorities[index][variant]}
+                    {scoresPriorities[index][parseInt(variant)]}
                   </TableCell>
                 ))}
               </TableRow>
