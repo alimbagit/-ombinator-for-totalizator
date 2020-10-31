@@ -2,7 +2,7 @@
   "compileOnSave": true,
   "compilerOptions": {
     "sourceMap": true,
-    "rootDir": "./",
+    "rootDir": "./src",
     "baseUrl": "./src",
     "target": "es6",
     "lib": [
@@ -17,7 +17,6 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
-    "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -33,6 +32,6 @@
     "node_modules"
   ],
   "paths": {
-    "static/*": ["../static/*"],
+    "static/*": ["public"],
   }
 }

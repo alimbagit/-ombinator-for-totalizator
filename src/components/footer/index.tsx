@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Menu, MenuItem, IconButton } from "@material-ui/core";
 import { MoreVert } from '@material-ui/icons';
 import { useSelector } from "react-redux";
-import { State } from "my-redux/rootReducer";
-import { variantsCount, matchesCount } from "components/readTable";
+import { State } from "utils/my-redux/rootReducer";
+import { variantsCount, matchesCount } from "utils/loadDeafaultTable";
 import { ButtonsWrapper, FooterWrapper, TextareaAutosize, Button, MenuWrapper } from './elements';
 
 /**Преобразовывает варианты ставок в текст и отоброжает его */
