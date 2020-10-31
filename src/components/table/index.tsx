@@ -7,7 +7,7 @@ import {
   Table,
   TableContainer,
   TextField,
-  Typography
+  Typography,
 } from "@material-ui/core";
 import { State } from "utils/my-redux/rootReducer";
 import React, { useEffect } from "react";
@@ -54,21 +54,24 @@ const ExcelTable = () => {
    * @param indexValue - индекс изменяемого значения
    */
   const handleChange = (
-    value: string,
+    event: React.ChangeEvent<{
+      name?: string | undefined;
+      value: unknown;
+    }>,
     indexMatch: number,
     indexValue?: number
   ) => {
     if (indexValue !== undefined) {
-      dispatch(changePriority(indexMatch, indexValue, value));
+      dispatch(changePriority(indexMatch, indexValue, event.target.value as string));
     } else {
-      dispatch(changeMatchesScores(indexMatch, value));
+      dispatch(changeMatchesScores(indexMatch, event.target.value as string));
     }
   };
 
   return (
     <Paper>
       <TableContainer>
-        { namesTeams.length>0 ?
+        {namesTeams.length > 0 ? (
           <Table size="small" stickyHeader aria-label="sticky table">
             <TableHead>
               {/* Заголовок таблицы */}
@@ -140,7 +143,9 @@ const ExcelTable = () => {
               </TableRow>
             </TableBody>
           </Table>
-        : <Typography variant="h6">Загрузка...</Typography>}
+        ) : (
+          <Typography variant="h6">Загрузка...</Typography>
+        )}
       </TableContainer>
     </Paper>
   );

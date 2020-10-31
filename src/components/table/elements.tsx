@@ -4,7 +4,10 @@ import React from "react";
 interface SelectNumberProps {
   valueCell: string;
   handleChange: (
-    value: string,
+    event: React.ChangeEvent<{
+      name?: string | undefined;
+      value: unknown;
+    }>,
     indexMatch: number,
     indexValue?: number
   ) => void;
@@ -19,7 +22,7 @@ interface SelectNumberProps {
  * @param indecMatch - индекс матча в таблице
  * @param indexValue - index изменяемого значния
  * @param value - значение, присваиваемое после события onChange
-*/
+ */
 export const SelectNumber = ({
   valueCell,
   handleChange,
@@ -31,8 +34,8 @@ export const SelectNumber = ({
       value={valueCell}
       onChange={(e) => {
         if (indexValue !== undefined) {
-          handleChange(e.target.value as string, indexMatch, indexValue);
-        } else handleChange(e.target.value as string, indexMatch);
+          handleChange(e, indexMatch, indexValue);
+        } else handleChange(e, indexMatch);
       }}
     >
       <MenuItem value="X">X</MenuItem>
