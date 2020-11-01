@@ -2,14 +2,15 @@ import styled from 'styled-components';
 import { TextareaAutosize as Textarea, Button as MyButton } from '@material-ui/core'
 
 export const FooterWrapper = styled.div`
-
+    margin:10px;
+    padding:5px;
 `;
 
 export const ButtonsWrapper = styled.div`
     width: 100%;
     margin:20px 0;
     display:flex;
-    justify-content:flex-start;
+    justify-content:space-between;
 `;
 
 export const TextareaAutosize = styled(Textarea)`

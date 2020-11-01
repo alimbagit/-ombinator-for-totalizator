@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, TextareaHTMLAttributes, RefObject, ElementRef } from "react";
 import { Menu, MenuItem, IconButton } from "@material-ui/core";
 import { MoreVert } from '@material-ui/icons';
 import { useSelector } from "react-redux";
@@ -10,7 +10,8 @@ import { ButtonsWrapper, FooterWrapper, TextareaAutosize, Button, MenuWrapper } 
 const Footer = () => {
   /**Значение текстового поля с форматом ставки */
   const [textValue, setTextValue] = useState("");
-  const [openMenu, setOpenMenu] = useState(false);
+  const [openMenu, setOpenMenu] = useState<null | HTMLElement>(null);
+  const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
   /**Варианты ставок */
   const betVariants: string[][] = useSelector(
@@ -39,14 +40,21 @@ const Footer = () => {
     setTextValue(text);
   };
 
+  /**Копирование сформированного текста в буфер обмена */
+  const copyTextFormat=()=>{
+
+    textAreaRef.current?.select();
+    document.execCommand("copy");
+  }
+
   /**Закрытие меню */
   const handleCloseMenu = () => {
-    setOpenMenu(false);
+    setOpenMenu(null);
   }
 
   /**Открытие меню */
-  const handleOpenMenu = () => {
-    setOpenMenu(true);
+  const handleOpenMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setOpenMenu(event.currentTarget);
   }
 
   /**Сброс таблицы в начальное состояние */
@@ -63,18 +71,18 @@ const Footer = () => {
     <FooterWrapper>
       <ButtonsWrapper>
         <Button onClick={toTextFormat} variant="outlined">Сформировать</Button>
-        <Button variant="outlined">Копировать</Button>
+        <Button variant="outlined" onClick={copyTextFormat}>Копировать</Button>
         <MenuWrapper>
           <IconButton onClick={handleOpenMenu}>
             <MoreVert />
           </IconButton>
-          <Menu open={openMenu} keepMounted onClose={handleCloseMenu}>
+          <Menu open={Boolean(openMenu)} anchorEl={openMenu} onClose={handleCloseMenu}>
             <MenuItem onClick={changeTableSize}>Размеры таблицы</MenuItem>
             <MenuItem onClick={clearTable}>Сбросить таблицу</MenuItem>
           </Menu>
         </MenuWrapper>
       </ButtonsWrapper>
-      <TextareaAutosize value={textValue} placeholder="Текстовый формат" rowsMin={3} />
+      <TextareaAutosize ref={textAreaRef} value={textValue} placeholder="Текстовый формат" rowsMin={3} />
     </FooterWrapper>
   );
 };
