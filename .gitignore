@@ -1,3 +1,5 @@
 node_modules
+build
 .vscode
-.next
+database-debug.log
+ui-debug.log

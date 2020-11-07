@@ -36,7 +36,11 @@ const ExcelTable = () => {
   const resultHits = useSelector((state: State) => state.resultHits);
 
   useEffect(() => {
-    loadDeafaultTable().then((data) => dispatch(setInitialValues(data)));
+
+    loadDeafaultTable().then((data) => {
+      console.log("data=", data);
+      dispatch(setInitialValues(data));
+    });
   }, []);
 
   /**Обработчик изменения имен команд */
@@ -89,9 +93,11 @@ const ExcelTable = () => {
             </TableHead>
             {/* Тело таблицы */}
             <TableBody>
+              {console.log("matchesScores=" + matchesScores)}
               {matchesScores.map((match, index) => (
                 // Строка таблицы
-                <TableRow hover key={index}>
+                <TableRow key={index}>
+                  {console.log("index=" + index)}
                   <TableCell>{index + 1}</TableCell>
                   {/* Названия команд */}
                   {namesTeams[index].map((name, key) => (
@@ -134,7 +140,7 @@ const ExcelTable = () => {
                 </TableRow>
               ))}
               {/* Количество совпадиений в вариантах */}
-              <TableRow key={20}>
+              <TableRow>
                 <TableCell colSpan={6}></TableCell>
                 <TableCell>Совпадения</TableCell>
                 {resultHits.map((hit, key) => (
@@ -144,8 +150,8 @@ const ExcelTable = () => {
             </TableBody>
           </Table>
         ) : (
-          <Typography variant="h6">Загрузка...</Typography>
-        )}
+            <Typography variant="h6">Загрузка...</Typography>
+          )}
       </TableContainer>
     </Paper>
   );
