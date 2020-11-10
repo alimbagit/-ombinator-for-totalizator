@@ -22,6 +22,7 @@ import {
 import { variantsCount } from "utils/loadDeafaultTable";
 import { SelectNumber } from "./elements";
 import loadDeafaultTable from "utils/loadDeafaultTable";
+import { matchesCount } from 'utils/loadDeafaultTable';
 
 /**Главный компонент таблицы */
 const ExcelTable = () => {
@@ -94,7 +95,7 @@ const ExcelTable = () => {
             {/* Тело таблицы */}
             <TableBody>
               {console.log("matchesScores=" + matchesScores)}
-              {matchesScores.map((match, index) => (
+              {namesTeams.map((names, index) => (
                 // Строка таблицы
                 <TableRow key={index}>
                   {console.log("index=" + index)}
