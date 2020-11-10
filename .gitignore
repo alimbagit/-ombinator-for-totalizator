@@ -3,3 +3,4 @@ build
 .vscode
 database-debug.log
 ui-debug.log
+.firebase
