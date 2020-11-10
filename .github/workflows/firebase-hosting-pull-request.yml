@@ -16,3 +16,4 @@ jobs:
           projectId: combinator-for-totalizator
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
+          CI: false
