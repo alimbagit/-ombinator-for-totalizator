@@ -22,7 +22,7 @@ import {
 import { variantsCount } from "utils/loadDeafaultTable";
 import { SelectNumber } from "./elements";
 import loadDeafaultTable from "utils/loadDeafaultTable";
-import { matchesCount } from 'utils/loadDeafaultTable';
+import { dataBaseInit } from "utils/dataBaseInit";
 
 /**Главный компонент таблицы */
 const ExcelTable = () => {
@@ -37,11 +37,10 @@ const ExcelTable = () => {
   const resultHits = useSelector((state: State) => state.resultHits);
 
   useEffect(() => {
-
     loadDeafaultTable().then((data) => {
-      console.log("data=", data);
       dispatch(setInitialValues(data));
     });
+    dataBaseInit();
   }, []);
 
   /**Обработчик изменения имен команд */
@@ -67,7 +66,9 @@ const ExcelTable = () => {
     indexValue?: number
   ) => {
     if (indexValue !== undefined) {
-      dispatch(changePriority(indexMatch, indexValue, event.target.value as string));
+      dispatch(
+        changePriority(indexMatch, indexValue, event.target.value as string)
+      );
     } else {
       dispatch(changeMatchesScores(indexMatch, event.target.value as string));
     }
@@ -94,11 +95,9 @@ const ExcelTable = () => {
             </TableHead>
             {/* Тело таблицы */}
             <TableBody>
-              {console.log("matchesScores=" + matchesScores)}
               {namesTeams.map((names, index) => (
                 // Строка таблицы
                 <TableRow key={index}>
-                  {console.log("index=" + index)}
                   <TableCell>{index + 1}</TableCell>
                   {/* Названия команд */}
                   {namesTeams[index].map((name, key) => (
@@ -151,8 +150,8 @@ const ExcelTable = () => {
             </TableBody>
           </Table>
         ) : (
-            <Typography variant="h6">Загрузка...</Typography>
-          )}
+          <Typography variant="h6">Загрузка...</Typography>
+        )}
       </TableContainer>
     </Paper>
   );

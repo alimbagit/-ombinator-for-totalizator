@@ -16,7 +16,8 @@
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "react-redux": "7.2.0",
-    "xlsx": "0.16.7"
+    "xlsx": "0.16.7",
+    "firebase": "7.21.1"
   },
   "devDependencies": {
     "typescript": "^4.0.3",

@@ -51,8 +51,6 @@ const loadDeafaultTable = async () => {
       ? dataTable.matchesScores.push("X")
       : dataTable.matchesScores.push(data[row][8].toString());
   }
-
-  console.log(dataTable);
   return dataTable;
 }
 
