@@ -1,0 +1,205 @@
+[debug] [2020-11-14T18:44:30.488Z] ----------------------------------------------------------------------
+[debug] [2020-11-14T18:44:30.490Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\us\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2020-11-14T18:44:30.490Z] CLI Version:   8.15.0
+[debug] [2020-11-14T18:44:30.490Z] Platform:      win32
+[debug] [2020-11-14T18:44:30.490Z] Node Version:  v14.4.0
+[debug] [2020-11-14T18:44:30.491Z] Time:          Sat Nov 14 2020 21:44:30 GMT+0300 (Москва, стандартное время)
+[debug] [2020-11-14T18:44:30.491Z] ----------------------------------------------------------------------
+[debug] [2020-11-14T18:44:30.492Z] 
+[debug] [2020-11-14T18:44:30.502Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-11-14T18:44:30.502Z] > authorizing via signed-in user
+[info] i  emulators: Starting emulators: database, hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: database, hosting"}}
+[debug] [2020-11-14T18:44:32.525Z] [hub] writing locator at C:\Users\us\AppData\Local\Temp\hub-combinator-for-totalizator.json
+[warn] !  database: Port 6000 is restricted by some web browsers, including Chrome. You may want to choose a different port such as 6001. {"metadata":{"emulator":{"name":"database"},"message":"Port 6000 is restricted by some web browsers, including Chrome. You may want to choose a different port such as 6001."}}
+[debug] [2020-11-14T18:44:34.534Z] database rules config:  [{"instance":"combinator-for-totalizator","rules":"G:\\projects\\combinator-for-totalizator\\database.rules.json"}]
+[debug] [2020-11-14T18:44:34.538Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2020-11-14T18:44:34.538Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2020-11-14T18:44:34.538Z] Ignoring unsupported arg: rules {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: rules"}}
+[debug] [2020-11-14T18:44:34.538Z] Starting Database Emulator with command {"binary":"java","args":["-Duser.language=en","-jar","C:\\Users\\us\\.cache\\firebase\\emulators\\firebase-database-emulator-v4.7.0.jar","--host","0.0.0.0","--port",6000],"optionalArgs":["port","host","functions_emulator_port","functions_emulator_host"],"joinArgs":false} {"metadata":{"emulator":{"name":"database"},"message":"Starting Database Emulator with command {\"binary\":\"java\",\"args\":[\"-Duser.language=en\",\"-jar\",\"C:\\\\Users\\\\us\\\\.cache\\\\firebase\\\\emulators\\\\firebase-database-emulator-v4.7.0.jar\",\"--host\",\"0.0.0.0\",\"--port\",6000],\"optionalArgs\":[\"port\",\"host\",\"functions_emulator_port\",\"functions_emulator_host\"],\"joinArgs\":false}"}}
+[info] i  database: Database Emulator logging to database-debug.log {"metadata":{"emulator":{"name":"database"},"message":"Database Emulator logging to \u001b[1mdatabase-debug.log\u001b[22m"}}
+[debug] [2020-11-14T18:44:36.318Z] 21:44:36.316 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+ {"metadata":{"emulator":{"name":"database"},"message":"21:44:36.316 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started\r\n"}}
+[debug] [2020-11-14T18:44:36.469Z] 21:44:36.468 [main] INFO com.firebase.server.forge.App$ - Listening at 0.0.0.0:6000
+ {"metadata":{"emulator":{"name":"database"},"message":"21:44:36.468 [main] INFO com.firebase.server.forge.App$ - Listening at 0.0.0.0:6000\r\n"}}
+[debug] [2020-11-14T18:44:38.806Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-11-14T18:44:38.806Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-11-14T18:44:38.974Z] <<< HTTP RESPONSE 200 {"date":"Sat, 14 Nov 2020 18:44:38 GMT","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-14T18:44:38.978Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/combinator-for-totalizator/webApps/-/config  
+ 
+[debug] [2020-11-14T18:44:39.839Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 14 Nov 2020 18:44:39 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] +  hosting: Local server: http://0.0.0.0:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://0.0.0.0:5000\u001b[22m\u001b[24m"}}
+[debug] [2020-11-14T18:44:43.869Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2020-11-14T18:44:43.869Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2020-11-14T18:44:43.869Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\us\\.cache\\firebase\\emulators\\ui-v1.2.2\\server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\us\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.2.2\\\\server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2020-11-14T18:44:43.970Z] Web / API server started at http://localhost:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at http://localhost:4000\n"}}
+[debug] [2020-11-14T18:44:44.376Z] >>> HTTP REQUEST PUT http://0.0.0.0:6000/.settings/rules.json?ns=combinator-for-totalizator  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+[debug] [2020-11-14T18:44:44.460Z] 21:44:44.460 [FirebaseWorkerPool-1-2] WARN com.firebase.core.namespace.NamespaceActorSystem - Request for ns: combinator-for-totalizator has incorrect domain. Current domain: 0.0.0.0, expected domain: firebaseio-staging.com
+ {"metadata":{"emulator":{"name":"database"},"message":"21:44:44.460 [FirebaseWorkerPool-1-2] WARN com.firebase.core.namespace.NamespaceActorSystem - Request for ns: combinator-for-totalizator has incorrect domain. Current domain: 0.0.0.0, expected domain: firebaseio-staging.com\r\n"}}
+[debug] [2020-11-14T18:44:44.527Z] <<< HTTP RESPONSE 404 {"content-length":"258","content-type":"application/json; charset=utf-8","access-control-allow-origin":"*","cache-control":"no-cache"}
+[debug] [2020-11-14T18:44:44.528Z] <<< HTTP RESPONSE BODY {
+  "correctUrl" : "https://combinator-for-totalizator.firebaseio-staging.com",
+  "error" : "Namespace combinator-for-totalizator lives in a different region. Please change your database URL to https://combinator-for-totalizator.firebaseio-staging.com"
+}
+
+[info] i  emulators: Shutting down emulators. {"metadata":{"emulator":{"name":"hub"},"message":"Shutting down emulators."}}
+[info] i  ui: Stopping Emulator UI {"metadata":{"emulator":{"name":"ui"},"message":"Stopping Emulator UI"}}
+[warn] !  Emulator UI has exited upon receiving signal: SIGINT 
+[info] i  hosting: Stopping Hosting Emulator {"metadata":{"emulator":{"name":"hosting"},"message":"Stopping Hosting Emulator"}}
+[info] i  database: Stopping Database Emulator {"metadata":{"emulator":{"name":"database"},"message":"Stopping Database Emulator"}}
+[warn] !  Database Emulator has exited upon receiving signal: SIGINT 
+[info] i  hub: Stopping emulator hub {"metadata":{"emulator":{"name":"hub"},"message":"Stopping emulator hub"}}
+[info] i  logging: Stopping Logging Emulator {"metadata":{"emulator":{"name":"logging"},"message":"Stopping Logging Emulator"}}
+[debug] [2020-11-14T18:44:44.741Z] 
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2020-11-14T18:58:03.012Z] ----------------------------------------------------------------------
+[debug] [2020-11-14T18:58:03.014Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\us\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2020-11-14T18:58:03.015Z] CLI Version:   8.15.0
+[debug] [2020-11-14T18:58:03.015Z] Platform:      win32
+[debug] [2020-11-14T18:58:03.015Z] Node Version:  v14.4.0
+[debug] [2020-11-14T18:58:03.016Z] Time:          Sat Nov 14 2020 21:58:03 GMT+0300 (Москва, стандартное время)
+[debug] [2020-11-14T18:58:03.016Z] ----------------------------------------------------------------------
+[debug] [2020-11-14T18:58:03.016Z] 
+[debug] [2020-11-14T18:58:03.023Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-11-14T18:58:03.023Z] > authorizing via signed-in user
+[info] i  emulators: Starting emulators: database, hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: database, hosting"}}
+[debug] [2020-11-14T18:58:05.045Z] [hub] writing locator at C:\Users\us\AppData\Local\Temp\hub-combinator-for-totalizator.json
+[debug] [2020-11-14T18:58:07.057Z] database rules config:  [{"instance":"combinator-for-totalizator","rules":"G:\\projects\\combinator-for-totalizator\\database.rules.json"}]
+[debug] [2020-11-14T18:58:07.061Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2020-11-14T18:58:07.061Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2020-11-14T18:58:07.061Z] Ignoring unsupported arg: rules {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: rules"}}
+[debug] [2020-11-14T18:58:07.061Z] Starting Database Emulator with command {"binary":"java","args":["-Duser.language=en","-jar","C:\\Users\\us\\.cache\\firebase\\emulators\\firebase-database-emulator-v4.7.0.jar","--host","0.0.0.0","--port",5001],"optionalArgs":["port","host","functions_emulator_port","functions_emulator_host"],"joinArgs":false} {"metadata":{"emulator":{"name":"database"},"message":"Starting Database Emulator with command {\"binary\":\"java\",\"args\":[\"-Duser.language=en\",\"-jar\",\"C:\\\\Users\\\\us\\\\.cache\\\\firebase\\\\emulators\\\\firebase-database-emulator-v4.7.0.jar\",\"--host\",\"0.0.0.0\",\"--port\",5001],\"optionalArgs\":[\"port\",\"host\",\"functions_emulator_port\",\"functions_emulator_host\"],\"joinArgs\":false}"}}
+[info] i  database: Database Emulator logging to database-debug.log {"metadata":{"emulator":{"name":"database"},"message":"Database Emulator logging to \u001b[1mdatabase-debug.log\u001b[22m"}}
+[debug] [2020-11-14T18:58:08.461Z] 21:58:08.459 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+ {"metadata":{"emulator":{"name":"database"},"message":"21:58:08.459 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started\r\n"}}
+[debug] [2020-11-14T18:58:08.587Z] 21:58:08.587 [main] INFO com.firebase.server.forge.App$ - Listening at 0.0.0.0:5001
+ {"metadata":{"emulator":{"name":"database"},"message":"21:58:08.587 [main] INFO com.firebase.server.forge.App$ - Listening at 0.0.0.0:5001\r\n"}}
+[debug] [2020-11-14T18:58:11.084Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/combinator-for-totalizator/webApps/-/config  
+ 
+[debug] [2020-11-14T18:58:11.931Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 14 Nov 2020 18:58:11 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] +  hosting: Local server: http://0.0.0.0:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://0.0.0.0:5000\u001b[22m\u001b[24m"}}
+[debug] [2020-11-14T18:58:15.957Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2020-11-14T18:58:15.958Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2020-11-14T18:58:15.958Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\us\\.cache\\firebase\\emulators\\ui-v1.2.2\\server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\us\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.2.2\\\\server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2020-11-14T18:58:16.055Z] Web / API server started at http://localhost:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at http://localhost:4000\n"}}
+[debug] [2020-11-14T18:58:16.465Z] >>> HTTP REQUEST PUT http://0.0.0.0:5001/.settings/rules.json?ns=combinator-for-totalizator  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+[debug] [2020-11-14T18:58:16.543Z] 21:58:16.542 [FirebaseWorkerPool-1-2] WARN com.firebase.core.namespace.NamespaceActorSystem - Request for ns: combinator-for-totalizator has incorrect domain. Current domain: 0.0.0.0, expected domain: firebaseio-staging.com
+ {"metadata":{"emulator":{"name":"database"},"message":"21:58:16.542 [FirebaseWorkerPool-1-2] WARN com.firebase.core.namespace.NamespaceActorSystem - Request for ns: combinator-for-totalizator has incorrect domain. Current domain: 0.0.0.0, expected domain: firebaseio-staging.com\r\n"}}
+[debug] [2020-11-14T18:58:16.607Z] <<< HTTP RESPONSE 404 {"content-length":"258","content-type":"application/json; charset=utf-8","access-control-allow-origin":"*","cache-control":"no-cache"}
+[debug] [2020-11-14T18:58:16.607Z] <<< HTTP RESPONSE BODY {
+  "correctUrl" : "https://combinator-for-totalizator.firebaseio-staging.com",
+  "error" : "Namespace combinator-for-totalizator lives in a different region. Please change your database URL to https://combinator-for-totalizator.firebaseio-staging.com"
+}
+
+[info] i  emulators: Shutting down emulators. {"metadata":{"emulator":{"name":"hub"},"message":"Shutting down emulators."}}
+[info] i  ui: Stopping Emulator UI {"metadata":{"emulator":{"name":"ui"},"message":"Stopping Emulator UI"}}
+[warn] !  Emulator UI has exited upon receiving signal: SIGINT 
+[info] i  hosting: Stopping Hosting Emulator {"metadata":{"emulator":{"name":"hosting"},"message":"Stopping Hosting Emulator"}}
+[info] i  database: Stopping Database Emulator {"metadata":{"emulator":{"name":"database"},"message":"Stopping Database Emulator"}}
+[warn] !  Database Emulator has exited upon receiving signal: SIGINT 
+[info] i  hub: Stopping emulator hub {"metadata":{"emulator":{"name":"hub"},"message":"Stopping emulator hub"}}
+[info] i  logging: Stopping Logging Emulator {"metadata":{"emulator":{"name":"logging"},"message":"Stopping Logging Emulator"}}
+[debug] [2020-11-14T18:58:16.801Z] 
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2020-11-14T19:24:21.390Z] ----------------------------------------------------------------------
+[debug] [2020-11-14T19:24:21.393Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\us\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2020-11-14T19:24:21.393Z] CLI Version:   8.16.2
+[debug] [2020-11-14T19:24:21.393Z] Platform:      win32
+[debug] [2020-11-14T19:24:21.393Z] Node Version:  v14.4.0
+[debug] [2020-11-14T19:24:21.394Z] Time:          Sat Nov 14 2020 22:24:21 GMT+0300 (Москва, стандартное время)
+[debug] [2020-11-14T19:24:21.394Z] ----------------------------------------------------------------------
+[debug] [2020-11-14T19:24:21.394Z] 
+[debug] [2020-11-14T19:24:21.401Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-11-14T19:24:21.401Z] > authorizing via signed-in user
+[info] i  emulators: Starting emulators: database, hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: database, hosting"}}
+[debug] [2020-11-14T19:24:23.422Z] [hub] writing locator at C:\Users\us\AppData\Local\Temp\hub-combinator-for-totalizator.json
+[debug] [2020-11-14T19:24:25.437Z] database rules config:  [{"instance":"combinator-for-totalizator","rules":"G:\\projects\\combinator-for-totalizator\\database.rules.json"}]
+[info] i  database: downloading firebase-database-emulator-v4.7.1.jar... {"metadata":{"emulator":{"name":"database"},"message":"downloading firebase-database-emulator-v4.7.1.jar..."}}
+[debug] [2020-11-14T19:24:25.442Z] >>> [apiv2][query] GET https://storage.googleapis.com/firebase-preview-drop/emulator/firebase-database-emulator-v4.7.1.jar [none]
+[debug] [2020-11-14T19:24:26.632Z] <<< [apiv2][status] GET https://storage.googleapis.com/firebase-preview-drop/emulator/firebase-database-emulator-v4.7.1.jar 200
+[debug] [2020-11-14T19:24:26.632Z] <<< [apiv2][body] GET https://storage.googleapis.com/firebase-preview-drop/emulator/firebase-database-emulator-v4.7.1.jar [stream]
+[info] i  database: Removing outdated emulator files: firebase-database-emulator-v4.7.0.jar {"metadata":{"emulator":{"name":"database"},"message":"Removing outdated emulator files: firebase-database-emulator-v4.7.0.jar"}}
+[debug] [2020-11-14T19:24:31.684Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2020-11-14T19:24:31.684Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2020-11-14T19:24:31.684Z] Ignoring unsupported arg: rules {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: rules"}}
+[debug] [2020-11-14T19:24:31.684Z] Starting Database Emulator with command {"binary":"java","args":["-Duser.language=en","-jar","C:\\Users\\us\\.cache\\firebase\\emulators\\firebase-database-emulator-v4.7.1.jar","--host","0.0.0.0","--port",5001],"optionalArgs":["port","host","functions_emulator_port","functions_emulator_host"],"joinArgs":false} {"metadata":{"emulator":{"name":"database"},"message":"Starting Database Emulator with command {\"binary\":\"java\",\"args\":[\"-Duser.language=en\",\"-jar\",\"C:\\\\Users\\\\us\\\\.cache\\\\firebase\\\\emulators\\\\firebase-database-emulator-v4.7.1.jar\",\"--host\",\"0.0.0.0\",\"--port\",5001],\"optionalArgs\":[\"port\",\"host\",\"functions_emulator_port\",\"functions_emulator_host\"],\"joinArgs\":false}"}}
+[info] i  database: Database Emulator logging to database-debug.log {"metadata":{"emulator":{"name":"database"},"message":"Database Emulator logging to \u001b[1mdatabase-debug.log\u001b[22m"}}
+[debug] [2020-11-14T19:24:33.060Z] 22:24:33.058 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+ {"metadata":{"emulator":{"name":"database"},"message":"22:24:33.058 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started\r\n"}}
+[debug] [2020-11-14T19:24:33.185Z] 22:24:33.185 [main] INFO com.firebase.server.forge.App$ - Listening at 0.0.0.0:5001
+ {"metadata":{"emulator":{"name":"database"},"message":"22:24:33.185 [main] INFO com.firebase.server.forge.App$ - Listening at 0.0.0.0:5001\r\n"}}
+[debug] [2020-11-14T19:24:35.698Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/combinator-for-totalizator/webApps/-/config  
+ 
+[debug] [2020-11-14T19:24:36.505Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 14 Nov 2020 19:24:36 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] +  hosting: Local server: http://0.0.0.0:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://0.0.0.0:5000\u001b[22m\u001b[24m"}}
+[debug] [2020-11-14T19:24:40.540Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2020-11-14T19:24:40.540Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2020-11-14T19:24:40.540Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\us\\.cache\\firebase\\emulators\\ui-v1.2.2\\server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\us\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.2.2\\\\server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2020-11-14T19:24:40.637Z] Web / API server started at http://localhost:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at http://localhost:4000\n"}}
+[debug] [2020-11-14T19:24:41.048Z] >>> HTTP REQUEST PUT http://0.0.0.0:5001/.settings/rules.json?ns=combinator-for-totalizator  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+[debug] [2020-11-14T19:24:41.409Z] <<< HTTP RESPONSE 200 {"content-length":"15","content-type":"application/json; charset=utf-8","access-control-allow-origin":"*","cache-control":"no-cache","x-firebase-project-id":"combinator-for-totalizator","x-firebase-project-number":"123456789","x-firebase-uuid":"813307d3-1fde-4e10-b110-efcd077c41ae"}
+[info] 
+┌────────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! View status and logs at localhost:4000 │
+└────────────────────────────────────────────────────────────────┘
+
+┌──────────┬──────────────┬─────────────────────────┐
+│ Emulator │ Host:Port    │ View in Emulator UI     │
+├──────────┼──────────────┼─────────────────────────┤
+│ Database │ 0.0.0.0:5001 │ localhost:4000/database │
+├──────────┼──────────────┼─────────────────────────┤
+│ Hosting  │ 0.0.0.0:5000 │ n/a                     │
+└──────────┴──────────────┴─────────────────────────┘
+  Other reserved ports: 4400, 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[info] i  hosting: 127.0.0.1 - - [14/Nov/2020:19:24:52 +0000] "GET / HTTP/1.1" 200 2245 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [14/Nov/2020:19:24:52 +0000] \"GET / HTTP/1.1\" 200 2245 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [14/Nov/2020:19:24:53 +0000] "GET /static/js/main.827b5a6b.chunk.js HTTP/1.1" 200 8943 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [14/Nov/2020:19:24:53 +0000] \"GET /static/js/main.827b5a6b.chunk.js HTTP/1.1\" 200 8943 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [14/Nov/2020:19:24:53 +0000] "GET /static/js/2.4e5d4c1a.chunk.js HTTP/1.1" 200 2676202 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [14/Nov/2020:19:24:53 +0000] \"GET /static/js/2.4e5d4c1a.chunk.js HTTP/1.1\" 200 2676202 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [14/Nov/2020:19:24:53 +0000] "GET /static/js/main.827b5a6b.chunk.js.map HTTP/1.1" 200 31226 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [14/Nov/2020:19:24:53 +0000] \"GET /static/js/main.827b5a6b.chunk.js.map HTTP/1.1\" 200 31226 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [14/Nov/2020:19:24:53 +0000] "GET //combinate.xlsx HTTP/1.1" 200 34147 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [14/Nov/2020:19:24:53 +0000] \"GET //combinate.xlsx HTTP/1.1\" 200 34147 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [14/Nov/2020:19:24:53 +0000] "GET /static/js/2.4e5d4c1a.chunk.js.map HTTP/1.1" 200 7345537 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [14/Nov/2020:19:24:53 +0000] \"GET /static/js/2.4e5d4c1a.chunk.js.map HTTP/1.1\" 200 7345537 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [14/Nov/2020:19:24:53 +0000] "GET /favicon.ico HTTP/1.1" 404 1841 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [14/Nov/2020:19:24:53 +0000] \"GET /favicon.ico HTTP/1.1\" 404 1841 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [14/Nov/2020:19:24:59 +0000] "GET / HTTP/1.1" 200 2245 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [14/Nov/2020:19:24:59 +0000] \"GET / HTTP/1.1\" 200 2245 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [14/Nov/2020:19:24:59 +0000] "GET /static/js/2.4e5d4c1a.chunk.js HTTP/1.1" 200 2676202 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [14/Nov/2020:19:24:59 +0000] \"GET /static/js/2.4e5d4c1a.chunk.js HTTP/1.1\" 200 2676202 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [14/Nov/2020:19:24:59 +0000] "GET /static/js/main.827b5a6b.chunk.js HTTP/1.1" 200 8943 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [14/Nov/2020:19:24:59 +0000] \"GET /static/js/main.827b5a6b.chunk.js HTTP/1.1\" 200 8943 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [14/Nov/2020:19:25:00 +0000] "GET /static/js/main.827b5a6b.chunk.js.map HTTP/1.1" 200 31226 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [14/Nov/2020:19:25:00 +0000] \"GET /static/js/main.827b5a6b.chunk.js.map HTTP/1.1\" 200 31226 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [14/Nov/2020:19:25:00 +0000] "GET //combinate.xlsx HTTP/1.1" 200 34147 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [14/Nov/2020:19:25:00 +0000] \"GET //combinate.xlsx HTTP/1.1\" 200 34147 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [14/Nov/2020:19:25:00 +0000] "GET /static/js/2.4e5d4c1a.chunk.js.map HTTP/1.1" 200 7345537 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [14/Nov/2020:19:25:00 +0000] \"GET /static/js/2.4e5d4c1a.chunk.js.map HTTP/1.1\" 200 7345537 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [14/Nov/2020:19:25:05 +0000] "GET / HTTP/1.1" 200 2245 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [14/Nov/2020:19:25:05 +0000] \"GET / HTTP/1.1\" 200 2245 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [14/Nov/2020:19:25:05 +0000] "GET /static/js/main.827b5a6b.chunk.js HTTP/1.1" 200 8943 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [14/Nov/2020:19:25:05 +0000] \"GET /static/js/main.827b5a6b.chunk.js HTTP/1.1\" 200 8943 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [14/Nov/2020:19:25:05 +0000] "GET /static/js/2.4e5d4c1a.chunk.js HTTP/1.1" 200 2676202 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [14/Nov/2020:19:25:05 +0000] \"GET /static/js/2.4e5d4c1a.chunk.js HTTP/1.1\" 200 2676202 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [14/Nov/2020:19:25:05 +0000] "GET /static/js/main.827b5a6b.chunk.js.map HTTP/1.1" 200 31226 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [14/Nov/2020:19:25:05 +0000] \"GET /static/js/main.827b5a6b.chunk.js.map HTTP/1.1\" 200 31226 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [14/Nov/2020:19:25:05 +0000] "GET /static/js/2.4e5d4c1a.chunk.js.map HTTP/1.1" 200 7345537 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [14/Nov/2020:19:25:05 +0000] \"GET /static/js/2.4e5d4c1a.chunk.js.map HTTP/1.1\" 200 7345537 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [14/Nov/2020:19:25:05 +0000] "GET //combinate.xlsx HTTP/1.1" 200 34147 "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [14/Nov/2020:19:25:05 +0000] \"GET //combinate.xlsx HTTP/1.1\" 200 34147 \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36\""}}
+[debug] [2020-11-14T19:25:19.709Z] Received signal SIGHUP 1
