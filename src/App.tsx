@@ -6,6 +6,7 @@ import { createStore } from "redux";
 import { Provider as ReduxProvider } from "react-redux";
 import { rootReducer } from "utils/my-redux/rootReducer";
 import { devToolsEnhancer } from 'redux-devtools-extension';
+import Auth from 'components/auth';
 
 const store = createStore(rootReducer, devToolsEnhancer({}));
 
@@ -14,6 +15,7 @@ const App = () => {
         <ReduxProvider store={store}>
             <WrapperApp>
                 <TableViewer/>
+                <Auth/>
                 <Footer />
             </WrapperApp>
         </ReduxProvider>

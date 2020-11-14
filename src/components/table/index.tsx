@@ -22,7 +22,6 @@ import {
 import { variantsCount } from "utils/loadDeafaultTable";
 import { SelectNumber } from "./elements";
 import loadDeafaultTable from "utils/loadDeafaultTable";
-import { dataBaseInit } from "utils/dataBaseInit";
 
 /**Главный компонент таблицы */
 const ExcelTable = () => {
@@ -40,7 +39,6 @@ const ExcelTable = () => {
     loadDeafaultTable().then((data) => {
       dispatch(setInitialValues(data));
     });
-    dataBaseInit();
   }, []);
 
   /**Обработчик изменения имен команд */
