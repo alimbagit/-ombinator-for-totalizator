@@ -1,12 +1,9 @@
 import {
   Paper,
   TableHead,
-  TableRow,
-  TableCell,
   TableBody,
   Table,
   TableContainer,
-  TextField,
   Typography,
 } from "@material-ui/core";
 import { State } from "utils/my-redux/rootReducer";
@@ -20,7 +17,7 @@ import {
   changeMatchesScores,
 } from "utils/my-redux/actions";
 import { variantsCount } from "utils/loadDeafaultTable";
-import { SelectNumber } from "./elements";
+import { SelectNumber, TableRow, TableCell, TextInput } from "./elements";
 import loadDeafaultTable from "utils/loadDeafaultTable";
 
 /**Главный компонент таблицы */
@@ -76,17 +73,25 @@ const ExcelTable = () => {
     <Paper>
       <TableContainer>
         {namesTeams.length > 0 ? (
-          <Table size="small" stickyHeader aria-label="sticky table">
+          <Table size="small" stickyHeader aria-label="a dense table">
             <TableHead>
               {/* Заголовок таблицы */}
               <TableRow>
-                <TableCell>№</TableCell>
+                <TableCell padding="none">
+                  <Typography style={{ marginLeft: "10px" }}>#</Typography>
+                </TableCell>
                 {tableHeaderData.map((column, index) => (
-                  <TableCell key={index}>{column}</TableCell>
+                  <TableCell key={index} padding="none">
+                    <Typography style={{ marginLeft: "10px" }}>
+                      {column}
+                    </Typography>
+                  </TableCell>
                 ))}
                 {new Array(variantsCount).fill(0).map((variant, ind) => (
-                  <TableCell key={ind} style={{ width: "10px" }}>
-                    {ind + 1}
+                  <TableCell key={ind} padding="none">
+                    <Typography style={{ marginLeft: "10px" }}>
+                      {ind + 1}
+                    </Typography>
                   </TableCell>
                 ))}
               </TableRow>
@@ -96,13 +101,20 @@ const ExcelTable = () => {
               {namesTeams.map((names, index) => (
                 // Строка таблицы
                 <TableRow key={index}>
-                  <TableCell>{index + 1}</TableCell>
+                  <TableCell padding="none">
+                    <Typography style={{ marginLeft: "10px" }}>
+                      {index + 1}
+                    </Typography>
+                  </TableCell>
                   {/* Названия команд */}
                   {namesTeams[index].map((name, key) => (
-                    <TableCell key={key}>
-                      <TextField
-                        size="small"
-                        variant="standard"
+                    <TableCell key={key} padding="none">
+                      <TextInput
+                        // size="small"
+                        // variant="standard"
+                        style={{ marginLeft: "10px" }}
+                        size={3}
+                        type="text"
                         value={name}
                         onChange={(
                           event: React.ChangeEvent<HTMLInputElement>
@@ -112,7 +124,7 @@ const ExcelTable = () => {
                   ))}
                   {/* Приоритеты ставок */}
                   {scoresPriorities[index].map((priority, key) => (
-                    <TableCell key={key}>
+                    <TableCell key={key} padding="none">
                       <SelectNumber
                         valueCell={priority}
                         handleChange={handleChange}
@@ -122,27 +134,36 @@ const ExcelTable = () => {
                     </TableCell>
                   ))}
                   {/* Счет матча */}
-                  <TableCell>
+                  <TableCell padding="none">
                     <SelectNumber
                       valueCell={matchesScores[index]}
                       handleChange={handleChange}
                       indexMatch={index}
+                      isNeutral
                     />
                   </TableCell>
                   {/* Варианты ставок */}
                   {betVariants[index].map((variant, key) => (
-                    <TableCell key={key}>
-                      {scoresPriorities[index][parseInt(variant)]}
+                    <TableCell key={key} padding="none">
+                      <Typography style={{ marginLeft: "10px" }}>
+                        {scoresPriorities[index][parseInt(variant)]}
+                      </Typography>
                     </TableCell>
                   ))}
                 </TableRow>
               ))}
               {/* Количество совпадиений в вариантах */}
               <TableRow>
-                <TableCell colSpan={6}></TableCell>
-                <TableCell>Совпадения</TableCell>
+                <TableCell colSpan={6} padding="none"></TableCell>
+                <TableCell padding="none">
+                  <Typography>cовпад</Typography>{" "}
+                </TableCell>
                 {resultHits.map((hit, key) => (
-                  <TableCell key={key}>{hit}</TableCell>
+                  <TableCell key={key} padding="none">
+                    <Typography style={{ marginLeft: "10px" }}>
+                      {hit}
+                    </Typography>
+                  </TableCell>
                 ))}
               </TableRow>
             </TableBody>
