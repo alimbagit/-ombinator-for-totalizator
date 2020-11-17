@@ -1,7 +1,7 @@
 import React from "react";
+import { Dialog } from "./elements";
 import {
   Button,
-  Dialog,
   DialogTitle,
   DialogContentText,
   DialogActions,
@@ -33,14 +33,18 @@ const ModalWindow = ({
 }: PropsModalWIndow) => {
   return (
     <Dialog open={shown} onClose={closeWindow}>
+      <DialogContent>
         {headText && <DialogTitle>{headText}</DialogTitle>}
         {descriptionText && (
           <DialogContentText>{descriptionText}</DialogContentText>
         )}
-        {children && <DialogContent>{children}</DialogContent>}
+        {children && children}
         <DialogActions>
-          <Button onClick={closeWindow}>OK</Button>
+          <Button variant="outlined" onClick={closeWindow}>
+            OK
+          </Button>
         </DialogActions>
+      </DialogContent>
     </Dialog>
   );
 };

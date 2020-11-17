@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { auth } from "firebaseui";
 import firebase from "firebase";
+import { AuthWrapper } from "./elements";
 
 const Auth = () => {
   useEffect(() => {
@@ -9,6 +10,8 @@ const Auth = () => {
       signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID],
       tosUrl: "<your-tos-url>",
     };
+    firebase.auth().languageCode = "ru";
+    firebase.auth().useDeviceLanguage();
     auth.AuthUI.getInstance()?.start("#firebaseui-auth-container", uiConfig);
   }, []);
 
@@ -22,10 +25,10 @@ const Auth = () => {
   });
 
   return (
-    <div>
+    <AuthWrapper>
       <div id="firebaseui-auth-container"></div>
       <div id="loader"></div>
-    </div>
+    </AuthWrapper>
   );
 };
 
