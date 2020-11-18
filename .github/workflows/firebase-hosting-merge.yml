@@ -13,12 +13,4 @@ jobs:
       - uses: actions/checkout@v2
       - run: yarn
       - run: CI=false yarn build
-      - uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_COMBINATOR_FOR_TOTALIZATOR }}'
-          channelId: live
-          projectId: combinator-for-totalizator
-        env:
-          FIREBASE_CLI_PREVIEWS: hostingchannels
-          CI: false
+      - run: firebase deploy
