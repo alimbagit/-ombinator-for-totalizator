@@ -10,8 +10,10 @@ const Auth = () => {
       signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID],
       tosUrl: "<your-tos-url>",
     };
+    //настройка параметров firebase auth
     firebase.auth().languageCode = "ru";
     firebase.auth().useDeviceLanguage();
+    //запуск firebaseui
     auth.AuthUI.getInstance()?.start("#firebaseui-auth-container", uiConfig);
   }, []);
 

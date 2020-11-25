@@ -121,16 +121,22 @@ const Footer = () => {
     setIsVisibleResetTable(false);
   };
 
+  window.onunload = () => {
+    if (firebase.auth().currentUser) {
+      SaveTable(stateTable);
+    }
+  };
+
   return (
     <>
       {scoresPriorities.length > 0 && (
         <FooterWrapper>
           <CustomHits />
           <ButtonsWrapper>
-            <Button onClick={toTextFormat} variant="outlined">
+            <Button onClick={toTextFormat} variant="outlined" style={{margin:"0 10px 5px 0"}}>
               Сформировать
             </Button>
-            <Button variant="outlined" onClick={copyTextFormat}>
+            <Button variant="outlined" onClick={copyTextFormat} style={{margin:"0 10px 5px 0"}}>
               Копировать
             </Button>
             <MenuWrapper>

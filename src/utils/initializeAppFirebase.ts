@@ -1,5 +1,5 @@
 import firebase from "firebase";
-
+import {auth} from 'firebaseui';
 /**Инициализация firebase*/
 const initializeAppFirebase = () => {
   const firebaseConfig = {
@@ -13,6 +13,9 @@ const initializeAppFirebase = () => {
     measurementId: "G-GZ3Q1PZZW0",
   };
   firebase.initializeApp(firebaseConfig);
+
+  //Инициализация firebaseui по умолчанию
+  new auth.AuthUI(firebase.auth());
 };
 
 export default initializeAppFirebase;

@@ -19,7 +19,7 @@ export const TextareaAutosize = styled(Textarea)`
 
 export const Button = styled(MyButton)`
     margin:0 10px;
-    flex-shrink:1;
+    /* flex-shrink:1; */
 `;
 
 export const MenuWrapper = styled.div`

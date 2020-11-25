@@ -8,14 +8,6 @@ export const matchesCount = 15;
 /**Количество вариантов ставок */
 export const variantsCount = 36;
 
-let dataTable: State = {
-  betVariants: [],
-  matchesScores: [],
-  namesTeams: [],
-  scoresPriorities: [],
-  resultHits: []
-};
-
 /**Чтение xlsx файла */
 const loadDeafaultTable = async () => {
   let url = window.location.href + fileName;
@@ -24,6 +16,14 @@ const loadDeafaultTable = async () => {
   let workbook = xlsx.read(tableJson, { type: 'buffer' });
   let worksheet = workbook.Sheets[workbook.SheetNames[0]]; //берем первый лист
   let data = xlsx.utils.sheet_to_json(worksheet, { header: 1 }) as string[][]; //преобразовываем в массив
+
+  let dataTable: State = {
+    betVariants: [],
+    matchesScores: [],
+    namesTeams: [],
+    scoresPriorities: [],
+    resultHits: []
+  };
 
   /**Преобразование данных из файла*/
   for (let row = 1; row <= matchesCount; row++) {

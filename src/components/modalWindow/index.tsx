@@ -42,7 +42,7 @@ const ModalWindow = ({
   return (
     <Dialog open={shown} onClose={closeWindow}>
       {headText && <DialogTitle>{headText}</DialogTitle>}
-      <DialogContent dividers>
+      <DialogContent>
         {descriptionText && <Typography>{descriptionText}</Typography>}
         {children && children}
       </DialogContent>
