@@ -16,18 +16,26 @@ const CustomHits = () => {
   const customResultHits = (hits: number) => {
     let result = resultHits.filter((hit) => hit === hits);
     return result.length.toString();
-  };    
+  };
 
   return (
+    <>
+    <Typography>Количество совпадений</Typography>
     <WrapperHits>
-      {new Array(7).fill(0).map((value, index) => (
-        <Typography key={index} >
-          {(countMatches - index).toString() +
-            ":" +
-            customResultHits(countMatches - index)}
-        </Typography>
-      ))}
+      {new Array(7).fill(0).map((value, index) => {
+        let result = customResultHits(countMatches - index);
+        return (
+          <>
+            {result !== "0" && (
+              <Typography key={index}>
+                {(countMatches - index).toString() + ":" + result}
+              </Typography>
+            )}
+          </>
+        );
+      })}
     </WrapperHits>
+    </>
   );
 };
 

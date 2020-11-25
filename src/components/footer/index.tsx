@@ -121,12 +121,6 @@ const Footer = () => {
     setIsVisibleResetTable(false);
   };
 
-  window.onunload = () => {
-    if (firebase.auth().currentUser) {
-      SaveTable(stateTable);
-    }
-  };
-
   return (
     <>
       {scoresPriorities.length > 0 && (
