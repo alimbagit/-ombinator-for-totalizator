@@ -16,9 +16,11 @@ import {
   changePriority,
   changeMatchesScores,
 } from "utils/my-redux/actions";
-import { variantsCount } from "utils/loadDeafaultTable";
+import firebase from "firebase";
+import { initialTableFromBase } from "utils/dataBaseAPI";
 import { SelectNumber, TableRow, TableCell, TextInput } from "./elements";
-import loadDeafaultTable from "utils/loadDeafaultTable";
+import loadDeafaultTable, { variantsCount } from "utils/loadDeafaultTable";
+import initializeAppFirebase from "utils/initializeAppFirebase";
 
 /**Главный компонент таблицы */
 const ExcelTable = () => {
@@ -33,9 +35,20 @@ const ExcelTable = () => {
   const resultHits = useSelector((state: State) => state.resultHits);
 
   useEffect(() => {
-    loadDeafaultTable().then((data) => {
-      dispatch(setInitialValues(data));
+    initializeAppFirebase();
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        initialTableFromBase().then((data) => {
+          dispatch(setInitialValues(data));
+        });
+      } else {
+        loadDeafaultTable().then((data) => {
+          dispatch(setInitialValues(data));
+        });
+      }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   /**Обработчик изменения имен команд */
@@ -55,6 +68,7 @@ const ExcelTable = () => {
   const handleChange = (
     event: React.ChangeEvent<{
       name?: string | undefined;
+      /** значение, которое будет возвращать SelectNumber */
       value: unknown;
     }>,
     indexMatch: number,
@@ -110,8 +124,6 @@ const ExcelTable = () => {
                   {namesTeams[index].map((name, key) => (
                     <TableCell key={key} padding="none">
                       <TextInput
-                        // size="small"
-                        // variant="standard"
                         style={{ marginLeft: "10px" }}
                         size={3}
                         type="text"
@@ -145,7 +157,7 @@ const ExcelTable = () => {
                   {/* Варианты ставок */}
                   {betVariants[index].map((variant, key) => (
                     <TableCell key={key} padding="none">
-                      <Typography style={{ marginLeft: "10px" }}>
+                      <Typography style={{ marginLeft: "10px", width: "25px" }}>
                         {scoresPriorities[index][parseInt(variant)]}
                       </Typography>
                     </TableCell>
@@ -156,11 +168,17 @@ const ExcelTable = () => {
               <TableRow>
                 <TableCell colSpan={6} padding="none"></TableCell>
                 <TableCell padding="none">
-                  <Typography>cовпад</Typography>{" "}
+                  <Typography
+                    style={{ margin: "4px 0px 3px 0px", height: "30px" }}
+                  >
+                    cовпад
+                  </Typography>{" "}
                 </TableCell>
                 {resultHits.map((hit, key) => (
                   <TableCell key={key} padding="none">
-                    <Typography style={{ marginLeft: "10px" }}>
+                    <Typography
+                      style={{ margin: "4px 0px 3px 10px", height: "30px" }}
+                    >
                       {hit}
                     </Typography>
                   </TableCell>

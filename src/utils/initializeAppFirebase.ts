@@ -1,8 +1,7 @@
 import firebase from "firebase";
-import { auth } from "firebaseui";
 
-const initializeAppFireBase = () => {
-  //Инициализация firebase
+/**Инициализация firebase*/
+const initializeAppFirebase = () => {
   const firebaseConfig = {
     apiKey: "AIzaSyABNeNifZwR4EqzLcGenrAIazGeL-sW4C8",
     authDomain: "combinator-for-totalizator.firebaseapp.com",
@@ -14,14 +13,6 @@ const initializeAppFireBase = () => {
     measurementId: "G-GZ3Q1PZZW0",
   };
   firebase.initializeApp(firebaseConfig);
-
-  //Инициализация firebaseui
-  //   var uiConfig = {
-  //     signInSuccessUrl: "/",
-  //     signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID],
-  //     tosUrl: "<your-tos-url>",
-  //   };
-  new auth.AuthUI(firebase.auth());
 };
 
-export default initializeAppFireBase;
+export default initializeAppFirebase;

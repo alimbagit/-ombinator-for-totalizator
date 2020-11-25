@@ -1,18 +1,16 @@
 import {
-  Select,
-  MenuItem,
   TableRow as TmpTableRow,
   TableCell as TmpTableCell,
   TableCellBaseProps,
-  Input,
-  Typography,
+  Select,
+  MenuItem,
 } from "@material-ui/core";
-import React, { InputHTMLAttributes } from "react";
+import React from "react";
 import styled from "styled-components";
 
-export const TableCell = styled(TmpTableCell).attrs<TableCellBaseProps>({})<
-  TableCellBaseProps
->`
+export const TableCell = styled(TmpTableCell).attrs<TableCellBaseProps>(
+  {}
+)<TableCellBaseProps>`
   padding: 0px 5px 0px 5px;
 `;
 
@@ -27,18 +25,19 @@ export const TextInput = styled.input`
 
 export const TableRow = styled(TmpTableRow)``;
 
-const Option = styled.option`
+const Option = styled(MenuItem)`
   border: 0px;
   text-align: center;
 `;
 
-const MySelect = styled.select`
+const MySelect = styled(Select)`
   border: 0px;
   background-color: white;
   &:focus {
     border: 0px;
     outline: none;
   }
+  outline: none;
   margin-left: 10px;
 `;
 
@@ -74,20 +73,18 @@ export const SelectNumber = ({
   isNeutral,
 }: SelectNumberProps) => {
   return (
-    <Typography>
-      <MySelect
-        value={valueCell}
-        onChange={(e) => {
-          if (indexValue !== undefined) {
-            handleChange(e, indexMatch, indexValue);
-          } else handleChange(e, indexMatch);
-        }}
-      >
-        <Option value="X">Х</Option>
-        <Option value="1">1</Option>
-        <Option value="2">2</Option>
-        {isNeutral && <Option value="Н">Н</Option>}
-      </MySelect>
-    </Typography>
+    <MySelect
+      value={valueCell}
+      onChange={(e) => {
+        if (indexValue !== undefined) {
+          handleChange(e, indexMatch, indexValue);
+        } else handleChange(e, indexMatch);
+      }}
+    >
+      <Option value="X">Х</Option>
+      <Option value="1">1</Option>
+      <Option value="2">2</Option>
+      {isNeutral && <Option value="Н">Н</Option>}
+    </MySelect>
   );
 };

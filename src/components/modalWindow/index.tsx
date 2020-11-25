@@ -3,26 +3,33 @@ import { Dialog } from "./elements";
 import {
   Button,
   DialogTitle,
-  DialogContentText,
   DialogActions,
   DialogContent,
+  Typography,
 } from "@material-ui/core";
 
 interface PropsModalWIndow {
+  /**Флаг отображения модального окна */
   shown: boolean;
+  /** callback функция, которая будет запускаться при событии закрытия модального окна*/
   closeWindow: () => void;
+  /**заглавный текст в окне */
   headText?: string;
+  /** Надпись*/
   descriptionText?: string;
+  /** Компонент, который будет внутри модального окна*/
   children?: JSX.Element;
+  /** callback функция, которая будет запускаться при подтверждении действия */
+  actionOk?: () => void;
 }
 
 /**
  * Модальное окно
- *
  * @param shown - Флаг отображения модального окна
- * @param shown - состояние видимости окна
  * @param headText - заглавный текст в окне
  * @param closeWindow - callback функция, которая будет запускаться при событии закрытия модального окна
+ * @param shown - Компонент, который будет внутри модального окна
+ * @param actionOk - callback функция, которая будет запускаться при подтверждении действия
  */
 const ModalWindow = ({
   shown,
@@ -30,21 +37,31 @@ const ModalWindow = ({
   descriptionText,
   children,
   closeWindow,
+  actionOk,
 }: PropsModalWIndow) => {
   return (
     <Dialog open={shown} onClose={closeWindow}>
-      <DialogContent>
-        {headText && <DialogTitle>{headText}</DialogTitle>}
-        {descriptionText && (
-          <DialogContentText>{descriptionText}</DialogContentText>
-        )}
+      {headText && <DialogTitle>{headText}</DialogTitle>}
+      <DialogContent dividers>
+        {descriptionText && <Typography>{descriptionText}</Typography>}
         {children && children}
-        <DialogActions>
-          <Button variant="outlined" onClick={closeWindow}>
-            OK
-          </Button>
-        </DialogActions>
       </DialogContent>
+      <DialogActions>
+        {actionOk ? (
+          <>
+            <Button variant="outlined" onClick={closeWindow}>
+              ОТМЕНА
+            </Button>
+            <Button variant="outlined" onClick={actionOk}>
+              ОК
+            </Button>
+          </>
+        ) : (
+          <Button variant="outlined" onClick={closeWindow}>
+            ОК
+          </Button>
+        )}
+      </DialogActions>
     </Dialog>
   );
 };

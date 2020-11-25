@@ -10,7 +10,7 @@ export const ButtonsWrapper = styled.div`
     width: 100%;
     margin:20px 0;
     display:flex;
-    justify-content:flex-end;
+    justify-content:flex-start;
 `;
 
 export const TextareaAutosize = styled(Textarea)`
@@ -23,6 +23,6 @@ export const Button = styled(MyButton)`
 `;
 
 export const MenuWrapper = styled.div`
-    margin:0 10px;
+    margin-left: 10px;
     flex-shrink:0;
 `;
