@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Menu, MenuItem, IconButton } from "@material-ui/core";
+import { Menu, MenuItem, IconButton, Drawer, Typography } from "@material-ui/core";
 import { MoreVert } from "@material-ui/icons";
 import { State } from "utils/my-redux/rootReducer";
 import loadDeafaultTable, {
@@ -29,6 +29,8 @@ const Footer = () => {
   const [isVisibleAuthWindow, setIsVisibleAuthWindow] = useState(false);
   const [isVisibleRefactorWindow, setIsVisibleRefactorWindow] = useState(false);
   const [isVisibleResetTable, setIsVisibleResetTable] = useState(false);
+  const [isVisibleNotification, setIsVisibleNotification] = useState(false);
+  const [descriptionNotification, setDescriptionNotification] = useState("");
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
   const dispatch = useDispatch();
@@ -83,7 +85,13 @@ const Footer = () => {
     handleCloseMenu();
 
     if (firebase.auth().currentUser) {
-      SaveTable(stateTable);
+      SaveTable(stateTable).then(result => {
+        if (!result) {
+          setDescriptionNotification("Сохранено");
+          setIsVisibleNotification(true);
+          setTimeout(setIsVisibleNotification, 3000, false);
+        }
+      });
     } else {
       setIsVisibleAuthWindow(true);
     }
@@ -125,12 +133,16 @@ const Footer = () => {
     <>
       {scoresPriorities.length > 0 && (
         <FooterWrapper>
+          {/* Оповещения для пользователя */}
+          <Drawer anchor="top" open={isVisibleNotification} variant="persistent">
+            <Typography style={{ textAlign: "center", margin: "10px 0" }}>{descriptionNotification}</Typography>
+          </Drawer>
           <CustomHits />
           <ButtonsWrapper>
-            <Button onClick={toTextFormat} variant="outlined" style={{margin:"0 10px 5px 0"}}>
+            <Button onClick={toTextFormat} variant="outlined" style={{ margin: "0 10px 5px 0" }}>
               Сформировать
             </Button>
-            <Button variant="outlined" onClick={copyTextFormat} style={{margin:"0 10px 5px 0"}}>
+            <Button variant="outlined" onClick={copyTextFormat} style={{ margin: "0 10px 5px 0" }}>
               Копировать
             </Button>
             <MenuWrapper>
@@ -168,7 +180,7 @@ const Footer = () => {
             closeWindow={CloseModalWindow}
             headText="Редактор размеров таблицы"
             descriptionText="Эта функция еще недоступна"
-            // children={<RefactorTable />}
+          // children={<RefactorTable />}
           />
           <ModalWindow
             shown={isVisibleResetTable}
@@ -176,7 +188,7 @@ const Footer = () => {
             headText="Вы уверены что хотите сбросить значения таблицы?"
             actionOk={ResetTable}
           />
-        </FooterWrapper>
+        </FooterWrapper >
       )}
     </>
   );
