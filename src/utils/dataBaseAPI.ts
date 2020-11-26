@@ -1,5 +1,6 @@
 import firebase from "firebase";
 import { State } from "utils/my-redux/rootReducer";
+import loadDeafaultTable from "./loadDeafaultTable";
 
 // export const CreateTableNewUser = (table: any) => {
 //   /**Событие ответа сервера авторизации */
@@ -24,16 +25,20 @@ import { State } from "utils/my-redux/rootReducer";
 // };
 
 /**Сохранить состояние всей таблицы */
-export const SaveTable = (table: State) => {
+export const SaveTable = async (table: State) => {
   let userId = firebase.auth().currentUser?.uid;
+  let result;
   if (userId) {
-    firebase
+    result = await firebase
       .database()
       .ref("users/" + userId)
       .set({
         table: table,
       });
   }
+  else result = "Вы не авторизованы!";
+  console.log("result=", result);
+  return result;
 };
 
 /**Начальная загрузка таблицы из БД */
@@ -43,6 +48,12 @@ export const initialTableFromBase = async () => {
     .database()
     .ref("users/" + userId + "/table")
     .once("value");
-  let tableData: State = userSnapshot.val();
+  let tableData: State;
+  if (userSnapshot.val()) {
+    tableData = userSnapshot.val();
+  } else {
+    tableData = await loadDeafaultTable();
+    SaveTable(tableData);
+  }
   return tableData;
 };

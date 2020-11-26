@@ -20,21 +20,17 @@ const CustomHits = () => {
 
   return (
     <>
-    <Typography>Количество совпадений</Typography>
-    <WrapperHits>
-      {new Array(7).fill(0).map((value, index) => {
-        let result = customResultHits(countMatches - index);
-        return (
-          <>
-            {result !== "0" && (
-              <Typography key={index}>
-                {(countMatches - index).toString() + ":" + result}
-              </Typography>
-            )}
-          </>
-        );
-      })}
-    </WrapperHits>
+      <Typography>Количество совпадений</Typography>
+      <WrapperHits>
+        {new Array(7).fill(0).map((value, index) => {
+          let result = customResultHits(countMatches - index);
+          return result !== "0" && (
+            <Typography key={index.toString()}>
+              {(countMatches - index).toString() + ":" + result}
+            </Typography>
+          );
+        })}
+      </WrapperHits>
     </>
   );
 };
